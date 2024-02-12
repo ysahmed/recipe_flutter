@@ -52,7 +52,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                       child: Container(
                         width: 150,
                         alignment: Alignment.center,
-                        child: Text(
+                        child: const Text(
                           'Ingredients',
                         ),
                       ),
@@ -61,7 +61,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                       child: Container(
                         width: 150,
                         alignment: Alignment.center,
-                        child: Text('Procedure'),
+                        child: const Text('Procedure'),
                       ),
                     ),
                   ],
@@ -75,7 +75,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                   controller: tabController,
                   children: [
                     ListView(
-                      children: [
+                      children: const [
                         IngredientItem(
                             name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
                         IngredientItem(
@@ -87,7 +87,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                       ],
                     ),
                     ListView(
-                      children: [
+                      children: const [
                         ProcedureItem(step: 1),
                         ProcedureItem(step: 2),
                         ProcedureItem(step: 3),
@@ -187,26 +187,26 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.timer_outlined,
                         color: Colors.white,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 4, right: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 4, right: 10),
                         child: Text(
                           '20 min',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.white,
                         ),
                         child: GestureDetector(
                           onTap: () {},
                           child: const Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: EdgeInsets.all(4.0),
                             child: Icon(
                               Icons.bookmark_border,
                               color: buttonColor,
@@ -293,36 +293,5 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
         ],
       ),
     );
-  }
-
-  Widget _tabBar(TabController tabController) {
-    return Column(
-      children: [
-        TabBar(
-          controller: tabController,
-          indicator: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: buttonColor,
-          ),
-          indicatorColor: Colors.white,
-          tabs: [
-            Tab(
-              child: Text('Ingredients'),
-            ),
-            Tab(
-              child: Text('Procedure'),
-            ),
-          ],
-        ),
-        _itemCount(1, 10),
-      ],
-    );
-  }
-
-  Widget _tabBarView(TabController tabController) {
-    return TabBarView(children: [
-      Placeholder(),
-      Placeholder(),
-    ]);
   }
 }

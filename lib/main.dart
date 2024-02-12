@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:recipe/pages/home_page.dart';
 import 'package:recipe/pages/recipe_detail_page.dart';
-import 'package:recipe/pages/start_page.dart';
+import 'package:recipe/pages/search_page.dart';
+import 'package:recipe/pages/welcome_page.dart';
 import 'package:recipe/preview_page.dart';
 
 void main() {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RecipeDetailPage(),
+      home: const HomePage(),
     );
   }
 }
