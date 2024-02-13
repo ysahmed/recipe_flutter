@@ -110,7 +110,9 @@ class WelcomePage extends StatelessWidget {
                           ],
                         ),
                         Button(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/homePage');
+                          },
                           // width: deviceWidth * 0.7,
                           // height: deviceHeight * 0.08,
                           width: 243,

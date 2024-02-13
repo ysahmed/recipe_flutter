@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class IngredientItem extends StatelessWidget {
+class IngredientsListItem extends StatelessWidget {
   final String _name, _amount, _imageName;
-  const IngredientItem(
+  const IngredientsListItem(
       {super.key,
       required String name,
       required String amount,

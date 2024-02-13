@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ProcedureItem extends StatelessWidget {
+class ProcedureListItem extends StatelessWidget {
   final int _step;
-  const ProcedureItem({super.key, required int step}) : _step = step;
+  const ProcedureListItem.ProcedureListItem({super.key, required int step})
+      : _step = step;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),

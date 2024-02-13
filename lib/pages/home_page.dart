@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/utils/constants.dart';
-import 'package:recipe/widgets/category_item.dart';
-import 'package:recipe/widgets/new_item.dart';
+import 'package:recipe/widgets/category_list_item.dart';
+import 'package:recipe/widgets/new_item_list_item.dart';
 import 'package:recipe/widgets/search_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -65,9 +65,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: TabBar(
+                    splashFactory: NoSplash.splashFactory,
                     controller: tabController,
                     isScrollable: true,
-                    labelPadding: const EdgeInsets.only(left: 0, right: 10),
+                    labelPadding: const EdgeInsets.only(left: 0, right: 0),
                     // padding: const EdgeInsets.only(left: 0),
                     indicator: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -101,42 +102,60 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           itemCount: 5,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
-                            return CategoryItem();
+                            return CategoryListItem(
+                              onTap: () =>
+                                  Navigator.pushNamed(context, '/detailPage'),
+                            );
                           },
                         ),
                         ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: (context, index) {
-                            return CategoryItem();
+                            return CategoryListItem(
+                              onTap: () =>
+                                  Navigator.pushNamed(context, '/detailPage'),
+                            );
                           },
                         ),
                         ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: (context, index) {
-                            return CategoryItem();
+                            return CategoryListItem(
+                              onTap: () =>
+                                  Navigator.pushNamed(context, '/detailPage'),
+                            );
                           },
                         ),
                         ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: (context, index) {
-                            return CategoryItem();
+                            return CategoryListItem(
+                              onTap: () =>
+                                  Navigator.pushNamed(context, '/detailPage'),
+                            );
                           },
                         ),
                         ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: (context, index) {
-                            return CategoryItem();
+                            return CategoryListItem(
+                              onTap: () =>
+                                  Navigator.pushNamed(context, '/detailPage'),
+                            );
                           },
                         ),
                         ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: (context, index) {
-                            return CategoryItem();
+                            return CategoryListItem(
+                              onTap: () =>
+                                  Navigator.pushNamed(context, '/detailPage'),
+                            );
                           },
                         ),
                       ],
@@ -162,7 +181,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
                       itemBuilder: (context, index) {
-                        return NewItem();
+                        return NewItemListItem(
+                          onTap: () =>
+                              Navigator.pushNamed(context, '/detailPage'),
+                        );
                       },
                     ),
                   ),
@@ -213,10 +235,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   Widget _tab(String text) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      alignment: Alignment.center,
-      child: Text(text),
+    return Tab(
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        alignment: Alignment.center,
+        child: Text(text),
+      ),
     );
   }
 

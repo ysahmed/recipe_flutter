@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/utils/constants.dart';
 import 'package:recipe/widgets/button.dart';
-import 'package:recipe/widgets/ingredient_item.dart';
-import 'package:recipe/widgets/procedure_item.dart';
+import 'package:recipe/widgets/ingredients_list_item.dart';
+import 'package:recipe/widgets/procedure_list_item.dart';
 import 'package:recipe/widgets/rating_badge.dart';
 
 class RecipeDetailPage extends StatefulWidget {
@@ -38,6 +38,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               SizedBox(
                 height: 33,
                 child: TabBar(
+                  splashFactory: NoSplash.splashFactory,
                   controller: tabController,
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -76,23 +77,23 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                   children: [
                     ListView(
                       children: const [
-                        IngredientItem(
+                        IngredientsListItem(
                             name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
-                        IngredientItem(
+                        IngredientsListItem(
                             name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
-                        IngredientItem(
+                        IngredientsListItem(
                             name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
-                        IngredientItem(
+                        IngredientsListItem(
                             name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
                       ],
                     ),
                     ListView(
                       children: const [
-                        ProcedureItem(step: 1),
-                        ProcedureItem(step: 2),
-                        ProcedureItem(step: 3),
-                        ProcedureItem(step: 4),
-                        ProcedureItem(step: 5),
+                        ProcedureListItem.ProcedureListItem(step: 1),
+                        ProcedureListItem.ProcedureListItem(step: 2),
+                        ProcedureListItem.ProcedureListItem(step: 3),
+                        ProcedureListItem.ProcedureListItem(step: 4),
+                        ProcedureListItem.ProcedureListItem(step: 5),
                       ],
                     ),
                   ],
@@ -278,7 +279,10 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                     ),
                     Row(
                       children: [
-                        Icon(Icons.place),
+                        Icon(
+                          Icons.place,
+                          color: buttonColor,
+                        ),
                         Text('Lagos, Nigeria'),
                       ],
                     ),
