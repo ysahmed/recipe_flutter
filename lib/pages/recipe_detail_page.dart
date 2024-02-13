@@ -34,7 +34,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               _video(),
               _spacer(height: 20),
               _userDetail(),
-              _spacer(height: 10),
+              _spacer(height: 20),
               SizedBox(
                 height: 33,
                 child: TabBar(
@@ -69,31 +69,54 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                 ),
               ),
               _spacer(height: 30),
-              _itemCount(1, 10),
-              _spacer(),
               Expanded(
                 child: TabBarView(
                   controller: tabController,
                   children: [
-                    ListView(
-                      children: const [
-                        IngredientsListItem(
-                            name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
-                        IngredientsListItem(
-                            name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
-                        IngredientsListItem(
-                            name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
-                        IngredientsListItem(
-                            name: 'Oil', amount: '20 ml', imageName: 'oil.jpg'),
+                    // ingredients tabView
+                    Column(
+                      children: [
+                        _listLead('10 items'),
+                        Expanded(
+                          child: ListView(
+                            children: const [
+                              IngredientsListItem(
+                                  name: 'Oil',
+                                  amount: '20 ml',
+                                  imageName: 'oil.jpg'),
+                              IngredientsListItem(
+                                  name: 'Oil',
+                                  amount: '20 ml',
+                                  imageName: 'oil.jpg'),
+                              IngredientsListItem(
+                                  name: 'Oil',
+                                  amount: '20 ml',
+                                  imageName: 'oil.jpg'),
+                              IngredientsListItem(
+                                  name: 'Oil',
+                                  amount: '20 ml',
+                                  imageName: 'oil.jpg'),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
-                    ListView(
-                      children: const [
-                        ProcedureListItem.ProcedureListItem(step: 1),
-                        ProcedureListItem.ProcedureListItem(step: 2),
-                        ProcedureListItem.ProcedureListItem(step: 3),
-                        ProcedureListItem.ProcedureListItem(step: 4),
-                        ProcedureListItem.ProcedureListItem(step: 5),
+
+                    // procedure tabView
+                    Column(
+                      children: [
+                        _listLead('5 steps'),
+                        Expanded(
+                          child: ListView(
+                            children: const [
+                              ProcedureListItem.ProcedureListItem(step: 1),
+                              ProcedureListItem.ProcedureListItem(step: 2),
+                              ProcedureListItem.ProcedureListItem(step: 3),
+                              ProcedureListItem.ProcedureListItem(step: 4),
+                              ProcedureListItem.ProcedureListItem(step: 5),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -112,28 +135,31 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
     );
   }
 
-  Widget _itemCount(int serveCount, int itemCount) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Icon(
-              Icons.coffee_maker_outlined,
-              color: Colors.black54,
-            ),
-            Text(
-              '$serveCount serve',
-              style: TextStyle(color: Colors.black54),
-            ),
-          ],
-        ),
-        Text(
-          '$itemCount Items',
-          style: TextStyle(color: Colors.black54),
-        ),
-      ],
+  Widget _listLead(String secondText) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Icon(
+                Icons.coffee_maker_outlined,
+                color: Colors.black54,
+              ),
+              Text(
+                '1 serve',
+                style: TextStyle(color: Colors.black54),
+              ),
+            ],
+          ),
+          Text(
+            secondText,
+            style: const TextStyle(color: Colors.black54),
+          ),
+        ],
+      ),
     );
   }
 
