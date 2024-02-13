@@ -65,20 +65,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
 
               // Tab Bar
-              SizedBox(
-                height: 31,
-                child: Align(
-                  alignment: Alignment.centerLeft,
+              Container(
+                padding: EdgeInsets.only(left: 30),
+                child: SizedBox(
+                  height: 31,
                   child: TabBar(
-                    splashFactory: NoSplash.splashFactory,
                     controller: tabController,
                     isScrollable: true,
-                    labelPadding: const EdgeInsets.only(left: 0, right: 0),
+                    splashFactory: NoSplash.splashFactory,
+                    labelPadding: const EdgeInsets.all(0),
                     // padding: const EdgeInsets.only(left: 0),
+                    tabAlignment: TabAlignment.start,
                     indicator: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: buttonColor,
                     ),
+                    indicatorSize: TabBarIndicatorSize.tab,
                     indicatorColor: Colors.white,
                     labelColor: Colors.white,
                     unselectedLabelColor: buttonColor,
