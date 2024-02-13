@@ -16,7 +16,9 @@ class SearchWidget extends StatelessWidget {
           width: 20,
         ),
         Button(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/searchPage');
+          },
           width: 40,
           height: 40,
           icon: Icons.search,

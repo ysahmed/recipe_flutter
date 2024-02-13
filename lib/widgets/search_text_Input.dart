@@ -9,6 +9,7 @@ class SearchTextInput extends StatelessWidget {
       height: 40,
       child: TextField(
         maxLines: 1,
+        readOnly: true,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(0),
           focusColor: Colors.black54,

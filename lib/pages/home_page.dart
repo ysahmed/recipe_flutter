@@ -48,18 +48,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // User Detail
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30,
                 ),
                 child: _userDetail(),
               ),
+
+              // search Widget
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30,
                 ),
                 child: _searchWidget(),
               ),
+
+              // Tab Bar
               SizedBox(
                 height: 31,
                 child: Align(

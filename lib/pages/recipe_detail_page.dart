@@ -188,10 +188,8 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                 width: double.maxFinite,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
-                    Colors.black87,
                     Colors.transparent,
-                    Colors.transparent,
-                    Colors.black87
+                    Colors.black.withOpacity(0.9),
                   ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                 ),
               ),
@@ -293,8 +291,8 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               ),
 
               // name & location
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
+              const Padding(
+                padding: EdgeInsets.only(left: 8),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
